@@ -44,6 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/touristspot/viewdetails/:id",
+        element: 
       },
     ],
   },
