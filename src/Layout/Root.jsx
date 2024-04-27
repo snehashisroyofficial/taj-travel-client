@@ -7,7 +7,7 @@ const Root = () => {
       <div className=" py-2  sticky z-10 ">
         <Navbar />
       </div>
-      <div className="container mx-auto   ">
+      <div className="max-w-6xl mx-auto border-2 border-purple-600 p-4  ">
         <Outlet />
       </div>
     </div>

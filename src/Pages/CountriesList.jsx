@@ -1,15 +1,21 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
-const AllTouristsSpot = () => {
-  const allSpots = useLoaderData();
-  console.log(allSpots);
+const CountriesList = () => {
+  const countryName = useParams();
+
+  const allSpotsData = useLoaderData();
+
+  const filterData = allSpotsData.filter(
+    (item) => item.country_name === countryName.countryname
+  );
+
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center py-8">
-        All Tourists Spot
+        {countryName.countryname}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
-        {allSpots.map((item) => (
+        {filterData.map((item) => (
           <div key={item._id} className="flex justify-center ">
             <div className=" bg-base-200 rounded-2xl ">
               <figure className="p-4 ">
@@ -43,4 +49,4 @@ const AllTouristsSpot = () => {
   );
 };
 
-export default AllTouristsSpot;
+export default CountriesList;

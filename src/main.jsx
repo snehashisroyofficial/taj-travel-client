@@ -7,10 +7,8 @@ import AuthProvider from "./FirebaseProvider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
-      <Toaster />
-    </AuthProvider>
-  </React.StrictMode>
+  <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+    <Toaster />
+  </AuthProvider>
 );
