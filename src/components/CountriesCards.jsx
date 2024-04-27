@@ -15,9 +15,9 @@ const CountriesCards = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 justify-center items-center">
       {user.map((card) => (
         <NavLink key={card._id} to={`/country/${card.country_name}`}>
-          <div className="relative">
+          <div className="w-full h-full relative cursor-pointer group overflow-hidden ">
             <img
-              className="h-80 w-full bg-cover "
+              className="w-full h-64 scale-100 group-hover:scale-110  transition-transform duration-500  "
               src={card.image_url}
               alt={card.country_name}
             />
