@@ -24,7 +24,7 @@ const AllTouristsSpot = () => {
               <p>Travel Time: {item.travel_time} Days</p>
               <p>Seasonality: {item.options}</p>
               <div className="">
-                <Link to={`/touristspot/viewdetails/${item._id}`}>
+                <Link to={`/touristspot/${item._id}`}>
                   <button className="btn w-full btn-primary">
                     View Details
                   </button>

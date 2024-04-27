@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <AddCountries />,
       },
       {
-        path: "/touristspot/viewdetails/:id",
+        path: "/touristspot/:id",
         element: <ViewDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/alltouristsspot/${params.id}`),
