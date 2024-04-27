@@ -1,7 +1,9 @@
-import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
-  return <div></div>;
+  const user = useLoaderData();
+  console.log(user);
+  return <div>hello {user}</div>;
 };
 
 export default ViewDetails;
