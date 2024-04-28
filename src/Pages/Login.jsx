@@ -36,7 +36,15 @@ const Login = () => {
         });
         navigate(location.state ? location.state : "/");
       })
-      .catch(() => toast.error("your profile not found"));
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed!",
+          text: "Please check you email & password",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -51,7 +59,15 @@ const Login = () => {
         });
         navigate(location.state ? location.state : "/");
       })
-      .catch((error) => toast.error(error.message));
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed!",
+          text: "Please check you email & password",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   const handleGithubLogin = () => {
@@ -65,7 +81,15 @@ const Login = () => {
         });
         navigate(location.state ? location.state : "/");
       })
-      .catch(() => toast.error("something went to wrong"));
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed!",
+          text: "Please check you email & password",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   return (
