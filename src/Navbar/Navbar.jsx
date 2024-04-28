@@ -3,7 +3,6 @@ import useAuth from "../Hooks/useAuth";
 import { MdLogout, MdLogin, MdOutlineModeOfTravel } from "react-icons/md";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -12,8 +11,9 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout()
-      .then(() => toast.success("LogOut Successfully!"))
-      .catch(() => toast.error("Something wrong!"));
+      .then((res) => console.log(res))
+
+      .catch((error) => console.log(error.message));
   };
 
   const navLinks = (

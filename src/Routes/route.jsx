@@ -10,6 +10,7 @@ import AddCountries from "../components/AddCountries";
 import ViewDetails from "../Pages/ViewDetails";
 import CountriesList from "../Pages/CountriesList";
 import UpdateTouristsSpot from "../Pages/UpdateTouristsSpot";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/country/:countryname",
-        element: <CountriesList />,
+        element: (
+          <PrivateRoute>
+            <CountriesList />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/alltouristsspot"),
       },
     ],
