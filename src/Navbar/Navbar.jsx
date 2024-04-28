@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import { MdLogout, MdLogin, MdOutlineModeOfTravel } from "react-icons/md";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -11,9 +12,22 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout()
-      .then((res) => console.log(res))
-
-      .catch((error) => console.log(error.message));
+      .then(() =>
+        Swal.fire({
+          icon: "success",
+          title: "Logout Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      )
+      .catch((error) =>
+        Swal.fire({
+          icon: "error",
+          title: "Please try again",
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      );
   };
 
   const navLinks = (
