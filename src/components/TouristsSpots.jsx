@@ -3,6 +3,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { BsSuitcase } from "react-icons/bs";
 import useAuth from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const TouristsSpots = () => {
   const { user } = useAuth();
@@ -24,7 +25,21 @@ const TouristsSpots = () => {
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center py-8">
-        Tourists Spots
+        Journey{" "}
+        <span className="text-red-500 font-bold">
+          <Typewriter
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={[
+              "into Our Destinations",
+              "through Local Attractions",
+              "to Plan Your Adventure",
+              "for Authentic Culture Experience",
+            ]}
+          />
+        </span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
         {cards.slice(0, loadmore).map((item) => (

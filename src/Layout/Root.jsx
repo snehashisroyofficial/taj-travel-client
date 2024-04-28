@@ -8,7 +8,7 @@ const Root = () => {
       <div className=" py-2 top-0 sticky z-10 bg-base-100 ">
         <Navbar />
       </div>
-      <div className="max-w-6xl mx-auto p-4  ">
+      <div className="max-w-6xl min-h-[calc(100vh-78px)] mx-auto p-4  ">
         <Outlet />
       </div>
       <Footer></Footer>
