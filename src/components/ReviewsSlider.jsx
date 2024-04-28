@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import Rating from "react-rating";
 
 const ReviewsSlider = () => {
   const [user, setUser] = useState([]);
@@ -49,34 +51,14 @@ const ReviewsSlider = () => {
           {user.map((item) => (
             <SwiperSlide key={item._id}>
               <div className=" w-80 mx-auto h-60 bg-base-200 p-4 flex flex-col justify-evenly">
-                <div className="rating rating-sm">
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400 	"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-2"
-                    className="mask mask-star-2 bg-orange-400"
-                  />
-                </div>
+                <Rating
+                  className="text-orange-400"
+                  initialRating={item.ratings}
+                  readonly
+                  emptySymbol={<FaRegStar />}
+                  fullSymbol={<FaStar />}
+                />
+
                 <p className="text-sm">{item.description}</p>
                 <p>{item.name}</p>
               </div>
