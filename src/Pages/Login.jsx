@@ -4,7 +4,7 @@ import { FaEyeSlash, FaRegEye } from "react-icons/fa6";
 import useAuth from "../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-// import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const Login = () => {
   useEffect(() => {
@@ -28,7 +28,12 @@ const Login = () => {
     const { email, password } = data;
     signInUser(email, password)
       .then(() => {
-        toast.success("login successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Login Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(location.state ? location.state : "/");
       })
       .catch(() => toast.error("your profile not found"));
@@ -38,7 +43,12 @@ const Login = () => {
     googleLogin()
       .then((res) => {
         console.log(res);
-        toast.success("login successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Login Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(location.state ? location.state : "/");
       })
       .catch((error) => toast.error(error.message));
@@ -47,7 +57,12 @@ const Login = () => {
   const handleGithubLogin = () => {
     githubLogin()
       .then(() => {
-        toast.success("login successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Login Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(location.state ? location.state : "/");
       })
       .catch(() => toast.error("something went to wrong"));
