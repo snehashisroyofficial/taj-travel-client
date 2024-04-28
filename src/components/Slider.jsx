@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 // import "./slider.css";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   const [card, setCard] = useState([]);
@@ -44,6 +45,11 @@ const Slider = () => {
                       ? item.description.slice(0, 200) + "...."
                       : item.description}
                   </p>
+                  <Link to={`/viewdetails/${item._id}`}>
+                    <button className="btn btn-primary text-white">
+                      Plan Details
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 ">
                   <img
