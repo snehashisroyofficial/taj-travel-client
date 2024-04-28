@@ -9,6 +9,7 @@ import Register from "../Pages/Register";
 import AddCountries from "../components/AddCountries";
 import ViewDetails from "../Pages/ViewDetails";
 import CountriesList from "../Pages/CountriesList";
+import UpdateTouristsSpot from "../Pages/UpdateTouristsSpot";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,13 @@ const router = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList />,
+        loader: () => fetch("http://localhost:5000/alltouristsspot"),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateTouristsSpot />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/viewdetails/${params.id}`),
       },
       {
         path: "/login",
