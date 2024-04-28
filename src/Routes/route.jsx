@@ -29,7 +29,6 @@ const router = createBrowserRouter([
       {
         path: "/alltouristsspot",
         element: <AllTouristsSpot />,
-        loader: () => fetch("http://localhost:5000/alltouristsspot"),
       },
       {
         path: "/mylist",

@@ -1,15 +1,43 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const AllTouristsSpot = () => {
-  const allSpots = useLoaderData();
-  console.log(allSpots);
+  const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetch("http://localhost:5000/alltouristsspot")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setUser(data);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  }
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center py-8">
         All Tourists Spot
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
-        {allSpots.map((item) => (
+        {user.map((item) => (
           <div key={item._id} className="flex justify-center ">
             <div className=" border-2 ">
               <figure className="p-4 ">

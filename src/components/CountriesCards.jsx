@@ -17,7 +17,7 @@ const CountriesCards = () => {
 
   if (loading) {
     return (
-      <div className="h-64 flex justify-center items-center">
+      <div className="min-h-screen flex justify-center items-center">
         <RotatingLines
           visible={true}
           height="96"

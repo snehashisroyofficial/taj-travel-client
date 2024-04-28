@@ -26,7 +26,7 @@ const Slider = () => {
           loop={true}
           modules={[Autoplay, Pagination]}
           autoplay={{
-            delay: 5000,
+            delay: 3000,
             pauseOnMouseEnter: true,
           }}
           pagination={{
