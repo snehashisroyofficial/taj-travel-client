@@ -1,15 +1,37 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { RotatingLines } from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 
 const CountriesCards = () => {
   const [user, setUser] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("http://localhost:5000/country")
       .then((res) => res.json())
-      .then((data) => setUser(data));
+      .then((data) => {
+        setLoading(false);
+        setUser(data);
+      });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="h-64 flex justify-center items-center">
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  }
 
   return (
     <div>
