@@ -29,7 +29,7 @@ const Navbar = () => {
         })
       );
   };
-
+  console.log(user);
   const navLinks = (
     <>
       <NavLink
@@ -127,7 +127,7 @@ const Navbar = () => {
                   alt="Tailwind CSS Navbar component"
                   src={
                     user
-                      ? user.photoURL
+                      ? user?.photoURL
                       : "https://img.icons8.com/ios-filled/50/user-male-circle.png"
                   }
                 />

@@ -21,7 +21,9 @@ const ReviewsSlider = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl text-center font-bold">Our Clients</h1>
+        <h1 className="text-3xl text-center font-bold capitalize">
+          Our clients Say{" "}
+        </h1>
       </div>
       <div className="py-10 ">
         <Swiper
