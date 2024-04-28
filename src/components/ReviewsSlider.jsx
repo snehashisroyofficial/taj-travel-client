@@ -21,19 +21,15 @@ const ReviewsSlider = () => {
       <div>
         <h1 className="text-3xl text-center font-bold">Our Clients</h1>
       </div>
-      <div className="py-10">
+      <div className="py-10 ">
         <Swiper
           slidesPerView={3}
           loop={true}
           modules={[Autoplay]}
           autoplay={{
-            delay: 1000,
-            pauseOnMouseEnter: true,
+            delay: 2000,
           }}
-          centeredSlides={true}
-          spaceBetween={30}
-          speed={2000}
-          className=""
+          spaceBetween={60}
         >
           {user.map((item) => (
             <SwiperSlide key={item._id}>

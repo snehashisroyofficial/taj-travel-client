@@ -1,6 +1,7 @@
 import CountriesCards from "../components/CountriesCards";
 import ReviewsSlider from "../components/ReviewsSlider";
 import Slider from "../components/Slider";
+import Stats from "../components/Stats";
 import TouristsSpots from "../components/TouristsSpots";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <CountriesCards></CountriesCards>
       <TouristsSpots />
       <ReviewsSlider />
+      <Stats></Stats>
     </div>
   );
 };
