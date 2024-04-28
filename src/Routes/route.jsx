@@ -11,6 +11,7 @@ import ViewDetails from "../Pages/ViewDetails";
 import CountriesList from "../Pages/CountriesList";
 import UpdateTouristsSpot from "../Pages/UpdateTouristsSpot";
 import PrivateRoute from "./PrivateRoute";
+import ReviewAdd from "../Pages/ReviewAdd";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/alltouristsspot"),
+      },
+      {
+        path: "/reviewadd",
+        element: <ReviewAdd />,
       },
     ],
   },
