@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -23,17 +23,32 @@ const ReviewsSlider = () => {
       </div>
       <div className="py-10 ">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={"auto"}
           loop={true}
           modules={[Autoplay]}
           autoplay={{
             delay: 2000,
           }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 60,
+            },
+          }}
           spaceBetween={60}
+          className="mySwiper "
         >
           {user.map((item) => (
             <SwiperSlide key={item._id}>
-              <div className=" w-80 h-60 bg-base-200 p-4 flex flex-col justify-evenly">
+              <div className=" w-80 mx-auto h-60 bg-base-200 p-4 flex flex-col justify-evenly">
                 <div className="rating rating-sm">
                   <input
                     type="radio"
