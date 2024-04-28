@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Slider = () => {
   const [card, setCard] = useState([]);
@@ -25,7 +26,7 @@ const Slider = () => {
           loop={true}
           modules={[Autoplay, Pagination]}
           autoplay={{
-            delay: 2000,
+            delay: 5000,
             pauseOnMouseEnter: true,
           }}
           pagination={{
@@ -37,8 +38,16 @@ const Slider = () => {
             <SwiperSlide key={item._id}>
               <div className="flex flex-col md:flex-row justify-between  ">
                 <div className="flex flex-col justify-center  space-y-3 p-6 text-center rounded-sm lg:max-w-md xl:max-w-2xl lg:text-left">
-                  <h1 className="text-5xl font-bold leading-none sm:text-6xl inline-block">
-                    {item.tourists_spot_name}
+                  <h1 className="text-5xl font-bold leading-none sm:text-6xl inline-block text-blue-600">
+                    <Typewriter
+                      cursor
+                      cursorBlinking
+                      delaySpeed={1000}
+                      deleteSpeed={25}
+                      loop={0}
+                      typeSpeed={80}
+                      words={[item.tourists_spot_name]}
+                    />
                   </h1>
                   <p>
                     {item.description.length > 100
@@ -46,7 +55,7 @@ const Slider = () => {
                       : item.description}
                   </p>
                   <Link to={`/viewdetails/${item._id}`}>
-                    <button className="btn btn-primary text-white">
+                    <button className="btn bg-blue-600 text-white">
                       Plan Details
                     </button>
                   </Link>
