@@ -121,10 +121,10 @@ const MyList = () => {
                   <span>{item.options}</span>
                 </td>
                 <td className="px-3 py-2 ">
-                  <span>{item.travel_time}</span>
+                  <span>{item.travel_time} Days</span>
                 </td>
                 <td className="px-3 py-2">
-                  <span>{item.total_visitors_per_year}</span>
+                  <span>{item.total_visitors_per_year}/Year</span>
                 </td>
                 <td className="px-3 py-2">
                   <Link to={`/update/${item._id}`}>
