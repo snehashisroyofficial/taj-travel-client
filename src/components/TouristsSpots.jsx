@@ -8,7 +8,7 @@ const TouristsSpots = () => {
   const { user } = useAuth();
   const userEmail = user?.email;
   const [cards, setCards] = useState([]);
-
+  const [loadmore, setLoadMore] = useState(6);
   useEffect(() => {
     fetch("http://localhost:5000/alltouristsspot")
       .then((res) => res.json())
@@ -18,13 +18,16 @@ const TouristsSpots = () => {
   const filterData = cards.filter((item) => item.email === userEmail);
   console.log(filterData);
 
+  const HandleLoadMore = () => {
+    setLoadMore(cards.length);
+  };
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center py-8">
         Tourists Spots
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
-        {cards.map((item) => (
+        {cards.slice(0, loadmore).map((item) => (
           <Link key={item._id} to={`/viewdetails/${item._id}`}>
             <div className="flex justify-center ">
               <div className=" rounded-2xl ">
@@ -57,6 +60,14 @@ const TouristsSpots = () => {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="flex justify-center py-8">
+        <button
+          onClick={HandleLoadMore}
+          className={`btn btn-primary ${loadmore > 6 && "hidden"}`}
+        >
+          Load More
+        </button>
       </div>
     </div>
   );
