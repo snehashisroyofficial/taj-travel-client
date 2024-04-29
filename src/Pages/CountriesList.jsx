@@ -17,7 +17,7 @@ const CountriesList = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
         {filterData.map((item) => (
           <div key={item._id} className="flex justify-center ">
-            <div className=" border-2 ">
+            <div className="  dark:bg-white dark:bg-opacity-10">
               <figure className="p-4 ">
                 <img
                   className="w-[360px] h-[260px]  "
@@ -41,7 +41,7 @@ const CountriesList = () => {
                 </p>
                 <div className="">
                   <Link to={`/viewdetails/${item._id}`}>
-                    <button className="btn w-full btn-primary text-base-content">
+                    <button className="btn w-full btn-primary text-white">
                       View Details
                     </button>
                   </Link>

@@ -38,7 +38,10 @@ const AllTouristsSpot = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
         {user.map((item) => (
-          <div key={item._id} className="flex justify-center ">
+          <div
+            key={item._id}
+            className="flex justify-center dark:bg-white dark:bg-opacity-10 "
+          >
             <div className=" border-2 ">
               <figure className="p-4 ">
                 <img
@@ -63,7 +66,7 @@ const AllTouristsSpot = () => {
                 </p>
                 <div className="">
                   <Link to={`/viewdetails/${item._id}`}>
-                    <button className="btn w-full btn-primary">
+                    <button className="btn w-full btn-primary text-white">
                       View Details
                     </button>
                   </Link>

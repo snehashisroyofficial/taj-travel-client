@@ -5,7 +5,7 @@ import Footer from "../Shared/Footer";
 const Root = () => {
   return (
     <div className="font-poppins">
-      <div className=" py-2 top-0 sticky z-10 bg-base-100 ">
+      <div className="  top-0 sticky z-10  bg-base-200 ">
         <Navbar />
       </div>
       <div className="max-w-6xl min-h-[calc(100vh-78px)] mx-auto p-8  ">

@@ -66,7 +66,7 @@ const Footer = () => {
               <h3 className="tracking-wide uppercase text-base-content font-bold">
                 Company
               </h3>
-              <ul className="space-y-1 capitalize text-base-content">
+              <ul className="space-y-1 capitalize text-base-content text-nowrap">
                 <li>
                   <NavLink to="/aboutus">about us</NavLink>
                 </li>

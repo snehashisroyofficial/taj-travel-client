@@ -67,7 +67,7 @@ const MyList = () => {
   return (
     <div>
       <table className="min-w-full text-xs table">
-        <thead className="rounded-t-lg font-semibold text-base-content">
+        <thead className="rounded-t-lg font-semibold text-base-content bg-base-200">
           <tr className="text-center">
             <th title="Ranking" className="p-3 text-center text-base-content">
               No.

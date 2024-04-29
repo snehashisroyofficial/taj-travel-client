@@ -52,7 +52,7 @@ const ReviewsSlider = () => {
         >
           {user.map((item) => (
             <SwiperSlide key={item._id}>
-              <div className=" w-80 mx-auto h-60 bg-base-200 p-4 flex flex-col justify-evenly">
+              <div className=" w-80 mx-auto dark:bg-white dark:bg-opacity-10  h-60 bg-base-200 p-4 flex flex-col justify-evenly">
                 <Rating
                   className="text-orange-400"
                   initialRating={item.ratings}

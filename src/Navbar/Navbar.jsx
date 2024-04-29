@@ -7,7 +7,7 @@ import {
   MdOutlineMarkEmailRead,
 } from "react-icons/md";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaRegUserCircle } from "react-icons/fa";
 
@@ -15,6 +15,23 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   const [open, setOpen] = useState(false);
+
+  // theme controller
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   const handleLogout = () => {
     logout()
@@ -26,7 +43,7 @@ const Navbar = () => {
           timer: 1500,
         })
       )
-      .catch((error) =>
+      .catch(() =>
         Swal.fire({
           icon: "error",
           title: "Please try again",
@@ -35,7 +52,7 @@ const Navbar = () => {
         })
       );
   };
-  console.log(user);
+
   const navLinks = (
     <>
       <NavLink
@@ -87,7 +104,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar mx-auto max-w-6xl ">
+    <div className="navbar mx-auto max-w-6xl bg-base-200 ">
       <div className="navbar-start">
         <div className="">
           <div
@@ -123,9 +140,9 @@ const Navbar = () => {
       <div className="navbar-end gap-4">
         <label className="cursor-pointer grid place-items-center">
           <input
+            onChange={handleToggle}
             type="checkbox"
-            value="dark"
-            className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
+            className="toggle  bg-base-content row-start-1 col-start-1 col-span-2"
           />
           <svg
             className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
@@ -178,17 +195,17 @@ const Navbar = () => {
           <div className="absolute right-0 hidden group-hover:block border-2   bg-base-100 rounded-md shadow-lg">
             <ul
               tabIndex={0}
-              className=" z-[1]  shadow menu menu-sm  top-10  w-fit"
+              className=" z-[1]  shadow menu menu-md  top-10  w-fit"
             >
               {user && (
                 <li>
-                  <a className="font-medium flex gap-1 ">
+                  <a className="font-medium flex gap-1 text-nowrap ">
                     <FaRegUserCircle />
                     {user?.displayName}
                   </a>
                 </li>
               )}
-              {user && (
+              {user?.email && (
                 <li>
                   <a className="font-medium flex gap-1">
                     <MdOutlineMarkEmailRead />
@@ -196,23 +213,22 @@ const Navbar = () => {
                   </a>
                 </li>
               )}
-              <li>
-                {user ? (
-                  <Link onClick={handleLogout}>
-                    <button className=" flex items-center gap-1  text-sm   font-semibold text-orange-600   ">
-                      <MdLogout />
-                      Logout
-                    </button>
-                  </Link>
-                ) : (
-                  <Link to="/login">
-                    <button className="flex items-center gap-1  text-sm   font-semibold text-blue-600   ">
-                      <MdLogin />
-                      Login
-                    </button>
-                  </Link>
-                )}
-              </li>
+
+              {user ? (
+                <Link onClick={handleLogout}>
+                  <button className=" flex items-center justify-center gap-1  text-sm   px-2 py-1 w-full bg-red-500 text-white rounded-md   ">
+                    <MdLogout />
+                    Logout
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <button className="flex items-center justify-center gap-1  text-sm    px-2 py-1  w-32  rounded-md  bg-green-500 text-white  ">
+                    <MdLogin />
+                    Login
+                  </button>
+                </Link>
+              )}
             </ul>
           </div>
         </div>

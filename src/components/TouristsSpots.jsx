@@ -17,7 +17,7 @@ const TouristsSpots = () => {
   }, []);
 
   const filterData = cards.filter((item) => item.email === userEmail);
-  console.log(filterData);
+  // console.log(filterData);
 
   const HandleLoadMore = () => {
     setLoadMore(cards.length);
