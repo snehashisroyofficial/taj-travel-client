@@ -11,7 +11,7 @@ const Footer = () => {
   const { user } = useAuth();
 
   return (
-    <footer className="px-4 divide-y  max-w-6xl  mx-auto  bg-gray-100 text-gray-800">
+    <footer className="px-4 divide-y  max-w-6xl  mx-auto  bg-base-200 text-gray-800 text-base-content">
       <div className="container flex flex-col justify-around py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a
@@ -44,12 +44,12 @@ const Footer = () => {
         >
           {user && (
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase text-gray-900">
+              <h3 className="tracking-wide uppercase text-base-content">
                 Listing add
               </h3>
-              <ul>
+              <ul className="text-base-content">
                 <NavLink to="/addcountries">
-                  <li className="mt-1">Add Countries</li>
+                  <li className="mt-1 ">Add Countries</li>
                 </NavLink>
 
                 <NavLink to="/addtouristsspot">
@@ -63,10 +63,10 @@ const Footer = () => {
           )}
           <div className="grid grid-cols-2 text-sm gap-x-10  gap-y-8  sm:grid-cols-2">
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase text-gray-900 font-bold">
+              <h3 className="tracking-wide uppercase text-base-content font-bold">
                 Company
               </h3>
-              <ul className="space-y-1 capitalize">
+              <ul className="space-y-1 capitalize text-base-content">
                 <li>
                   <NavLink to="/aboutus">about us</NavLink>
                 </li>
@@ -83,8 +83,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="space-y-3">
-            <div className="uppercase text-gray-900">Social media</div>
-            <div className="flex justify-start space-x-3 text-2xl">
+            <div className="uppercase text-base-content">Social media</div>
+            <div className="flex justify-start space-x-3 text-2xl text-base-content">
               <a
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/Snehashisroy.official"
@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center text-gray-600">
+      <div className="py-6 text-sm text-center text-base-content">
         © 2024 Taj Travel. All rights reserved.
       </div>
     </footer>

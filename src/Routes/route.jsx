@@ -16,11 +16,13 @@ import ContactUs from "../components/FooterContent/ContactUs";
 import AboutUs from "../components/FooterContent/AboutUs";
 import Disclaimer from "../components/FooterContent/Disclaimer";
 import PrivacyPolicy from "../components/FooterContent/PrivacyPolicy";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

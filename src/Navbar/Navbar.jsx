@@ -1,6 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { MdLogout, MdLogin, MdOutlineModeOfTravel } from "react-icons/md";
+import {
+  MdLogout,
+  MdLogin,
+  MdOutlineModeOfTravel,
+  MdOutlineMarkEmailRead,
+} from "react-icons/md";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import Swal from "sweetalert2";
@@ -173,17 +178,24 @@ const Navbar = () => {
           <div className="absolute right-0 hidden group-hover:block border-2   bg-base-100 rounded-md shadow-lg">
             <ul
               tabIndex={0}
-              className=" z-[1]  shadow menu menu-sm  top-10  w-40"
+              className=" z-[1]  shadow menu menu-sm  top-10  w-fit"
             >
               {user && (
                 <li>
-                  <a className="font-semibold flex gap-1 text-blue-700">
+                  <a className="font-medium flex gap-1 ">
                     <FaRegUserCircle />
                     {user?.displayName}
                   </a>
                 </li>
               )}
-
+              {user && (
+                <li>
+                  <a className="font-medium flex gap-1">
+                    <MdOutlineMarkEmailRead />
+                    {user?.email}
+                  </a>
+                </li>
+              )}
               <li>
                 {user ? (
                   <Link onClick={handleLogout}>
