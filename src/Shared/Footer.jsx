@@ -61,26 +61,26 @@ const Footer = () => {
               </ul>
             </div>
           )}
-
-          <div className="space-y-3">
-            <h3 className="uppercase text-gray-900">Developers</h3>
-            <ul className="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Public API
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Guides
-                </a>
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 text-sm gap-x-10  gap-y-8  sm:grid-cols-2">
+            <div className="space-y-3">
+              <h3 className="tracking-wide uppercase text-gray-900 font-bold">
+                Company
+              </h3>
+              <ul className="space-y-1 capitalize">
+                <li>
+                  <NavLink to="/aboutus">about us</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contactus">contact us</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/disclaimer">Disclaimer</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/privacypolicy">privacy policy</NavLink>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="space-y-3">
             <div className="uppercase text-gray-900">Social media</div>
@@ -117,7 +117,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 text-sm text-center text-gray-600">
-        © 1968 Company Co. All rights reserved.
+        © 2024 Taj Travel. All rights reserved.
       </div>
     </footer>
   );

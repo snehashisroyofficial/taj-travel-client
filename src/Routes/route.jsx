@@ -12,6 +12,10 @@ import CountriesList from "../Pages/CountriesList";
 import UpdateTouristsSpot from "../Pages/UpdateTouristsSpot";
 import PrivateRoute from "./PrivateRoute";
 import ReviewAdd from "../Pages/ReviewAdd";
+import ContactUs from "../components/FooterContent/ContactUs";
+import AboutUs from "../components/FooterContent/AboutUs";
+import Disclaimer from "../components/FooterContent/Disclaimer";
+import PrivacyPolicy from "../components/FooterContent/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +75,22 @@ const router = createBrowserRouter([
       {
         path: "/reviewadd",
         element: <ReviewAdd />,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs />,
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      {
+        path: "/disclaimer",
+        element: <Disclaimer />,
+      },
+      {
+        path: "/privacypolicy",
+        element: <PrivacyPolicy />,
       },
     ],
   },
