@@ -29,15 +29,16 @@ const CountriesList = () => {
                 <h2 className="text-2xl font-semibold">
                   {item.tourists_spot_name}
                 </h2>
+
+                <p>Total Visitors: {item.total_visitors_per_year}/Year</p>
+                <p>Travel Time: {item.travel_time} Days</p>
+                <p>Seasonality: {item.options}</p>
                 <p>
                   <span className="text-red-500 font-semibold">
                     From: ${item.average_cost}
                   </span>{" "}
                   /Person
                 </p>
-                <p>Total Visitors: {item.total_visitors_per_year}/Year</p>
-                <p>Travel Time: {item.travel_time} Days</p>
-                <p>Seasonality: {item.options}</p>
                 <div className="">
                   <Link to={`/viewdetails/${item._id}`}>
                     <button className="btn w-full btn-primary">
