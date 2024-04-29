@@ -49,7 +49,7 @@ const Slider = () => {
                       words={[item.tourists_spot_name]}
                     />
                   </h1>
-                  <p>
+                  <p className="text-base-content">
                     {item.description.length > 100
                       ? item.description.slice(0, 200) + "...."
                       : item.description}

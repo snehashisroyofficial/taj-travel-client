@@ -66,10 +66,10 @@ const MyList = () => {
   }
   return (
     <div>
-      <table className="min-w-full text-xs">
-        <thead className="rounded-t-lg bg-gray-300">
+      <table className="min-w-full text-xs table">
+        <thead className="rounded-t-lg font-semibold text-base-content">
           <tr className="text-center">
-            <th title="Ranking" className="p-3 text-center">
+            <th title="Ranking" className="p-3 text-center text-base-content">
               No.
             </th>
             <th title="Ranking" className="p-3 text-center">
@@ -101,10 +101,7 @@ const MyList = () => {
         <tbody>
           {filterData.map((item, idx) => {
             return (
-              <tr
-                key={item._id}
-                className="text-center border-b border-opacity-20 border-gray-300 bg-gray-100"
-              >
+              <tr key={item._id} className="text-center table-compact">
                 <td className="px-3 py-2 text-center">
                   <span>{idx + 1}</span>
                 </td>

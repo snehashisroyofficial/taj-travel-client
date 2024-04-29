@@ -22,7 +22,7 @@ const ViewDetails = () => {
   console.log(email);
   return (
     <article
-      className="w-full h-full  py-10 mx-auto space-y-16 bg-base-100 text-gray-900"
+      className="w-full h-full   py-10 mx-auto space-y-16 bg-base-100 text-gray-900"
       data-aos="fade-up"
     >
       <Fade>
@@ -30,12 +30,12 @@ const ViewDetails = () => {
           <img className="rounded-xl  " src={image_url} alt="" />
         </div>
 
-        <div className="w-full mx-auto space-y-4">
+        <div className="w-full mx-auto space-y-4 text-base-content">
           <div className="flex items-center  justify-between ">
-            <h1 className="text-3xl lg:text-5xl font-bold  ">
+            <h1 className="text-2xl lg:text-5xl font-bold   ">
               {tourists_spot_name}
             </h1>
-            <h1 className="text-3xl lg:text-2xl font-medium p-4 bg-green-500 text-white rounded-xl ">
+            <h1 className="text-xl  lg:text-2xl font-medium p-2  lg:p-4 bg-green-500 text-white rounded-xl ">
               Cost: ${average_cost}
             </h1>
           </div>

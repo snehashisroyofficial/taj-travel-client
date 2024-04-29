@@ -41,7 +41,7 @@ const CountriesList = () => {
                 </p>
                 <div className="">
                   <Link to={`/viewdetails/${item._id}`}>
-                    <button className="btn w-full btn-primary">
+                    <button className="btn w-full btn-primary text-base-content">
                       View Details
                     </button>
                   </Link>
