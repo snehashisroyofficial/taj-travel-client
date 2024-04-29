@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 const AllTouristsSpot = () => {
   const [user, setUser] = useState([]);
+  const [budget, setBudget] = useState(0);
+  const [filterdata, setFilterData] = useState([]);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("http://localhost:5000/alltouristsspot")
@@ -13,6 +16,37 @@ const AllTouristsSpot = () => {
         setUser(data);
       });
   }, []);
+
+  useEffect(() => {
+    if (budget == 0) {
+      setFilterData(user);
+    } else {
+      const filter = user.filter((item) => {
+        if (budget <= 50) {
+          return item.average_cost <= 50;
+        } else if (budget <= 100) {
+          return item.average_cost > 50 && item.average_cost <= 100;
+        } else if (budget <= 200) {
+          return item.average_cost > 100 && item.average_cost <= 200;
+        } else if (budget <= 300) {
+          return item.average_cost > 200 && item.average_cost <= 300;
+        } else if (budget <= 400) {
+          return item.average_cost > 300 && item.average_cost <= 400;
+        } else if (budget <= 500) {
+          return item.average_cost > 400 && item.average_cost <= 500;
+        } else if (budget >= 500) {
+          return item.average_cost >= 500;
+        }
+      });
+      setFilterData(filter);
+    }
+  }, [budget, user]);
+
+  const handleCountryFilter = (e) => {
+    setBudget(parseInt(e.target.value));
+  };
+  console.log(budget === 0);
+  console.log(filterdata);
 
   if (loading) {
     return (
@@ -31,13 +65,30 @@ const AllTouristsSpot = () => {
       </div>
     );
   }
+
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center py-8">
         All Tourists Spot
       </h1>
+      <select
+        onChange={handleCountryFilter}
+        className="select select-bordered w-full max-w-xs my-10"
+        defaultValue="default"
+      >
+        <option disabled value="default">
+          Choose Average Cost
+        </option>
+        <option>50</option>
+        <option>100</option>
+        <option>200</option>
+        <option>300</option>
+        <option>400</option>
+        <option>500</option>
+        <option>1000</option>
+      </select>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
-        {user.map((item) => (
+        {filterdata.map((item) => (
           <div
             key={item._id}
             className="flex justify-center dark:bg-white dark:bg-opacity-10 "

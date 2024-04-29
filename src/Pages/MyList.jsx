@@ -64,9 +64,18 @@ const MyList = () => {
       </div>
     );
   }
+
+  if (filterData.length === 0) {
+    return (
+      <div className="h-dvh flex justify-center items-center">
+        <h1 className="text-3xl font-bold">No Data Available!</h1>
+      </div>
+    );
+  }
+
   return (
-    <div>
-      <table className="min-w-full text-xs table">
+    <div className="flex justify-center items-center min-h-[calc(100vh-78px)]">
+      <table className=" border-2 ">
         <thead className="rounded-t-lg font-semibold text-base-content bg-base-200">
           <tr className="text-center">
             <th title="Ranking" className="p-3 text-center text-base-content">

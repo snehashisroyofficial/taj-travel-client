@@ -192,24 +192,17 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="absolute right-0 hidden group-hover:block border-2   bg-base-100 rounded-md shadow-lg">
+          <div className="absolute right-0 top-16 hidden group-hover:block border-2   bg-base-100 rounded-md shadow-lg">
+            <div className="absolute -top-8 left-0 right-0 h-8 bg-transparent"></div>
             <ul
               tabIndex={0}
-              className=" z-[1]  shadow menu menu-md  top-10  w-fit"
+              className=" z-[1]  shadow menu menu-md top-10  w-fit space-y-3"
             >
               {user && (
                 <li>
                   <a className="font-medium flex gap-1 text-nowrap ">
                     <FaRegUserCircle />
                     {user?.displayName}
-                  </a>
-                </li>
-              )}
-              {user?.email && (
-                <li>
-                  <a className="font-medium flex gap-1">
-                    <MdOutlineMarkEmailRead />
-                    {user?.email}
                   </a>
                 </li>
               )}
