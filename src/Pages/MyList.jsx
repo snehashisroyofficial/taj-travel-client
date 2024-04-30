@@ -30,7 +30,7 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/touristsspot/${id}`, {
+        fetch(`https://taj-travel-server.vercel.app/touristsspot/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

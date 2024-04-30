@@ -13,7 +13,7 @@ const AddTouristsSpot = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/touristsspot", {
+    fetch("https://taj-travel-server.vercel.app/touristsspot", {
       method: "POST",
       headers: {
         "content-type": "application/json",

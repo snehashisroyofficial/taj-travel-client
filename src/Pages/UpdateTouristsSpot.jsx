@@ -26,7 +26,7 @@ const UpdateTouristsSpot = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://taj-travel-server.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

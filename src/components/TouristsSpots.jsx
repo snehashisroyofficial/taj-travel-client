@@ -11,7 +11,7 @@ const TouristsSpots = () => {
   const [cards, setCards] = useState([]);
   const [loadmore, setLoadMore] = useState(6);
   useEffect(() => {
-    fetch("http://localhost:5000/alltouristsspot")
+    fetch("https://taj-travel-server.vercel.app/alltouristsspot")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);

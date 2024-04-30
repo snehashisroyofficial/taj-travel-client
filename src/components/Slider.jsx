@@ -14,7 +14,7 @@ const Slider = () => {
   const [card, setCard] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltouristsspot")
+    fetch("https://taj-travel-server.vercel.app/alltouristsspot")
       .then((res) => res.json())
       .then((data) => setCard(data));
   }, []);

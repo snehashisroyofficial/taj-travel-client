@@ -9,7 +9,7 @@ const AddCountries = () => {
     const country_description = form.description.value;
     const data = { country_name, image_url, country_description };
 
-    fetch("http://localhost:5000/country", {
+    fetch("https://taj-travel-server.vercel.app/country", {
       method: "POST",
       headers: {
         "content-type": "application/json",

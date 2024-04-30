@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             <AddTouristsSpot />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/country"),
+        loader: () => fetch("https://taj-travel-server.vercel.app/country"),
       },
       {
         path: "/alltouristsspot",
@@ -44,13 +44,16 @@ const router = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList />,
-        loader: () => fetch("http://localhost:5000/alltouristsspot"),
+        loader: () =>
+          fetch("https://taj-travel-server.vercel.app/alltouristsspot"),
       },
       {
         path: "/update/:id",
         element: <UpdateTouristsSpot />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/viewdetails/${params.id}`),
+          fetch(
+            `https://taj-travel-server.vercel.app/viewdetails/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -76,7 +79,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/viewdetails/${params.id}`),
+          fetch(
+            `https://taj-travel-server.vercel.app/viewdetails/${params.id}`
+          ),
       },
       {
         path: "/country/:countryname",
@@ -85,7 +90,8 @@ const router = createBrowserRouter([
             <CountriesList />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/alltouristsspot"),
+        loader: () =>
+          fetch("https://taj-travel-server.vercel.app/alltouristsspot"),
       },
       {
         path: "/reviewadd",

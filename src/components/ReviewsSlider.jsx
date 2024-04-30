@@ -11,7 +11,7 @@ const ReviewsSlider = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviewadd")
+    fetch("https://taj-travel-server.vercel.app/reviewadd")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

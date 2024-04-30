@@ -7,7 +7,7 @@ const CountriesCards = () => {
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/country")
+    fetch("https://taj-travel-server.vercel.app/country")
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
