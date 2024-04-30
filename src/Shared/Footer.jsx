@@ -33,7 +33,7 @@ const Footer = () => {
         >
           {user && (
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase text-base-content">
+              <h3 className="tracking-wide uppercase text-base-content font-bold">
                 Listing add
               </h3>
               <ul className="text-base-content">
