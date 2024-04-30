@@ -1,15 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import {
-  MdLogout,
-  MdLogin,
-  MdOutlineModeOfTravel,
-  MdOutlineMarkEmailRead,
-} from "react-icons/md";
+import { MdLogout, MdLogin } from "react-icons/md";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaRegUserCircle } from "react-icons/fa";
+import { FaAvianex } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -134,11 +130,14 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className="font-bold text-xl flex items-center gap-2">
-          <span className="text-violet-600 text-3xl">
-            <MdOutlineModeOfTravel />
+        <Link
+          to="/"
+          className="font-bold text-xl flex items-center gap-2 rowdies-regular "
+        >
+          <span className="text-violet-600 text-2xl md:text-4xl">
+            <FaAvianex />
           </span>
-          Taj Travel
+          <p className="rowdies-regular">Taj Travel</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
