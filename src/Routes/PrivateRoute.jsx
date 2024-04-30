@@ -6,7 +6,6 @@ import { RotatingLines } from "react-loader-spinner";
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
-  console.log(location.pathname);
 
   if (loading) {
     return (

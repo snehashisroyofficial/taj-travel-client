@@ -13,8 +13,6 @@ const AddTouristsSpot = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-
     fetch("http://localhost:5000/touristsspot", {
       method: "POST",
       headers: {
@@ -33,7 +31,7 @@ const AddTouristsSpot = () => {
       });
     reset();
   };
-  console.log(coutriesData);
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -44,8 +42,8 @@ const AddTouristsSpot = () => {
             </h1>
 
             {/* cols 1 */}
-            <div className="flex justify-between gap-3  ">
-              <div className="w-1/2">
+            <div className="flex flex-col  md:flex-row justify-between gap-3  ">
+              <div className="md:w-1/2">
                 <label htmlFor="url" className="block mb-2 text-sm">
                   Cover Image URL
                 </label>
@@ -63,7 +61,7 @@ const AddTouristsSpot = () => {
                   </span>
                 )}
               </div>
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <label
                   htmlFor="tourists_spot_name"
                   className="block mb-2 text-sm"
@@ -87,35 +85,35 @@ const AddTouristsSpot = () => {
             </div>
 
             {/* cols 2 */}
-            <div className="flex justify-between gap-3 ">
+            <div className="flex flex-col md:flex-row  justify-between gap-3 ">
               {/* countries data  */}
-              <div className="w-1/2">
-                <label htmlFor="country" className="block mb-2 text-sm">
+              <div className="md:w-1/2">
+                <label htmlFor="country_name" className="block mb-2 text-sm">
                   Available Countries
                 </label>
                 <select
                   className=" px-3 py-2 border rounded-md border-gray-300  text-gray-800 text-sm   bg-gray-50 w-full"
-                  name="country"
-                  id="country"
-                  {...register("country", { required: true })}
+                  name="country_name"
+                  id="country_name"
+                  {...register("country_name", { required: true })}
                 >
                   <option value="" disabled selected>
                     Please choose any one
                   </option>
 
                   {coutriesData.map((item) => (
-                    <option key={item._id} value="summer">
+                    <option key={item._id} value={item.country_name}>
                       {item.country_name}
                     </option>
                   ))}
                 </select>
-                {errors.country && (
+                {errors.country_name && (
                   <span className="text-red-500 text-sm">
                     This field is required
                   </span>
                 )}
               </div>
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <label htmlFor="location" className="block mb-2 text-sm">
                   Location
                 </label>
@@ -137,8 +135,8 @@ const AddTouristsSpot = () => {
 
             {/* cols 3 */}
 
-            <div className="flex  gap-3 ">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row   gap-3 ">
+              <div className="md:w-1/2">
                 <label htmlFor="average_cost" className="block mb-2 text-sm">
                   Average Cost
                 </label>
@@ -156,7 +154,7 @@ const AddTouristsSpot = () => {
                   </span>
                 )}
               </div>
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <label htmlFor="options" className="block mb-2 text-sm">
                   Seasonality
                 </label>
@@ -182,8 +180,8 @@ const AddTouristsSpot = () => {
 
             {/* cols 4 */}
 
-            <div className="flex justify-between gap-3 ">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row  justify-between gap-3 ">
+              <div className="md:w-1/2">
                 <label htmlFor="travel_time" className="block mb-2 text-sm">
                   Travel Time
                 </label>
@@ -201,7 +199,7 @@ const AddTouristsSpot = () => {
                   </span>
                 )}
               </div>
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <label
                   htmlFor="total_visitors_per_year"
                   className="block mb-2 text-sm"
@@ -226,8 +224,8 @@ const AddTouristsSpot = () => {
 
             {/* cols 5 */}
 
-            <div className="flex justify-between gap-3 ">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row  justify-between gap-3 ">
+              <div className="md:w-1/2">
                 <label htmlFor="email" className="block mb-2 text-sm">
                   Email Address
                 </label>
@@ -236,7 +234,7 @@ const AddTouristsSpot = () => {
                   name="email"
                   id="email"
                   placeholder="your email address"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 text-sm"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 text-sm lowercase"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
@@ -245,7 +243,7 @@ const AddTouristsSpot = () => {
                   </span>
                 )}
               </div>
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <label htmlFor="name" className="block mb-2 text-sm">
                   Your Name
                 </label>
@@ -254,7 +252,7 @@ const AddTouristsSpot = () => {
                   name="name"
                   id="name"
                   placeholder="your name"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 text-sm"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 text-sm lowercase"
                   {...register("name", { required: true })}
                 />
                 {errors.name && (

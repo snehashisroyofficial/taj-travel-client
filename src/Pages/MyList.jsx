@@ -4,6 +4,8 @@ import useAuth from "../Hooks/useAuth";
 import { RotatingLines } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { MdDelete } from "react-icons/md";
+import { FaPencil } from "react-icons/fa6";
 
 const MyList = () => {
   const { user, loading } = useAuth();
@@ -74,8 +76,8 @@ const MyList = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-78px)]">
-      <table className=" border-2 ">
+    <div className="flex justify-center items-center min-h-[calc(100vh-78px)] overflow-x-auto">
+      <table className=" border-2 min-w-full divide-y">
         <thead className="rounded-t-lg font-semibold text-base-content bg-base-200">
           <tr className="text-center">
             <th title="Ranking" className="p-3 text-center text-base-content">
@@ -132,19 +134,19 @@ const MyList = () => {
                 <td className="px-3 py-2">
                   <span>{item.total_visitors_per_year}/Year</span>
                 </td>
-                <td className="px-3 py-2">
+                <td>
                   <Link to={`/update/${item._id}`}>
-                    <button className="p-2 rounded-xl bg-green-500 text-white">
-                      Update
+                    <button className="p-2 rounded-full bg-green-500 text-white">
+                      <FaPencil />
                     </button>
                   </Link>
                 </td>
-                <td className="px-3 py-2">
+                <td>
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="p-2 rounded-xl bg-red-500 text-white"
+                    className="p-2 rounded-full bg-red-500 text-white"
                   >
-                    Delete
+                    <MdDelete />
                   </button>
                 </td>
               </tr>
