@@ -106,13 +106,13 @@ const AllTouristsSpot = () => {
         <option disabled value="default">
           Choose Average Cost
         </option>
-        <option>50</option>
-        <option>100</option>
-        <option>200</option>
-        <option>300</option>
-        <option>400</option>
-        <option>500</option>
-        <option>1000</option>
+        <option value={50}>less than 50</option>
+        <option value={100}>50-100</option>
+        <option value={200}>100-200</option>
+        <option value={300}>200-300</option>
+        <option value={400}>300-400</option>
+        <option value={500}>400-500</option>
+        <option value={1000}>More than 1000</option>
       </select>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-6  ">
         {filterdata.map((item) => (
