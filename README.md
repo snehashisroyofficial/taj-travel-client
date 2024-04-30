@@ -1,12 +1,16 @@
+
 # ASSIGNMENT - 10 (Taj Travel)
 
-## [Taj Travel - Asia's No.1 Travels Company](https://real-estate-assignment-09.web.app/)
+
+
+
+## [Taj Travel - Asia's No.1 Tours & Travel Company](https://assignment-10-e8407.web.app/)
 
 Website Name : Taj Travel
-
-Live Website Link : https://real-estate-assignment-09.web.app/
-
+ 
+Live Website Link : https://assignment-10-e8407.web.app/
 ## npm packages that I used for this project
+
 
 - [Swiper](https://swiperjs.com/)
 - [Lottie React](https://www.npmjs.com/package/react-lottie)
@@ -19,7 +23,7 @@ Live Website Link : https://real-estate-assignment-09.web.app/
 - [React Ratings](https://www.npmjs.com/package/react-rating)
 - [React CountUp](https://www.npmjs.com/package/react-countup)
 - [Helmet](https://www.npmjs.com/package/react-helmet)
-
+- [AOS Animation](https://www.npmjs.com/package/aos)
 ## Features
 
 - Responsive for Mobile/Tablet/Pc
@@ -30,9 +34,12 @@ Live Website Link : https://real-estate-assignment-09.web.app/
 - Update Password
 - Reset Password Link via Email
 - Protected Routes
-- Login
+- Login 
 - Register
 - Slider
+- AOS Animation
+
+
 
 ## Authors
 
