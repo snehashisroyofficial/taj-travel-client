@@ -123,25 +123,22 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className={`menu menu-sm font-semibold absolute lg:hidden mt-3 z-[1] p-4 gap-4 w-2/3 bg-base-200   h-screen transition-all duration-500 ease-in ${
+            className={`menu menu-sm font-poppins font-semibold absolute lg:hidden mt-3 z-[1] p-4 gap-4 w-2/3 bg-base-200   h-screen transition-all duration-500 ease-in ${
               open ? "left-0 " : "-left-full"
             }`}
           >
             {navLinks}
           </ul>
         </div>
-        <Link
-          to="/"
-          className="font-bold text-xl flex items-center gap-2 rowdies-regular "
-        >
+        <Link to="/" className="font-bold text-xl flex items-center gap-2 ">
           <span className="text-violet-600 text-2xl md:text-4xl">
             <FaAvianex />
           </span>
-          <p>Taj Travel</p>
+          <p className="font-leckerli  font-bold">Taj Travel</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-2 font-semibold ">
+        <ul className="menu menu-horizontal px-1 gap-2 font-semibold  font-poppins">
           {navLinks}
         </ul>
       </div>

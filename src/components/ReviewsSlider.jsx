@@ -62,7 +62,7 @@ const ReviewsSlider = () => {
                 />
 
                 <p className="text-sm">{item.description}</p>
-                <p>{item.name}</p>
+                <p className="font-semibold">{item.name}</p>
               </div>
             </SwiperSlide>
           ))}

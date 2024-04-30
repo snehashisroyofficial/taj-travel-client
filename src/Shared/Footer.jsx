@@ -16,9 +16,11 @@ const Footer = () => {
             <span className="text-violet-600 text-5xl md:text-4xl">
               <FaAvianex />
             </span>
-            <p>Taj Travel</p>
+            <p className="text-base-content text-3xl font-leckerli  font-bold">
+              Taj Travel
+            </p>
           </Link>
-          <p className="text-sm px-6 lg:px-0">
+          <p className="text-sm px-6 lg:px-0 text-base-content">
             Taj Travel: Your one-stop shop for crafting unforgettable journeys,
             from budget-friendly flights to dream vacations.
           </p>

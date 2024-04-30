@@ -76,63 +76,36 @@ const MyList = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-78px)] overflow-x-auto">
-      <table className=" border-2 min-w-full divide-y">
-        <thead className="rounded-t-lg font-semibold text-base-content bg-base-200">
-          <tr className="text-center">
-            <th title="Ranking" className="p-3 text-center text-base-content">
-              No.
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Spot Name
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Country
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Cost
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Seasonality
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Travel Time
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Visitor/year
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Update
-            </th>
-            <th title="Ranking" className="p-3 text-center">
-              Delete
-            </th>
+    <div className="h-screen flex justify-center items-center">
+      <table className="table table-xs lg:table-lg table-zebra">
+        {/* head */}
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Spot Name</th>
+            <th>Country</th>
+            <th>Cost</th>
+            <th className="hidden sm:table-cell">Seasonality</th>
+            <th className="hidden sm:table-cell">Travel Time</th>
+            <th className="hidden sm:table-cell">Visitor/year</th>
+            <th>Update</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {filterData.map((item, idx) => {
             return (
-              <tr key={item._id} className="text-center table-compact">
-                <td className="px-3 py-2 text-center">
-                  <span>{idx + 1}</span>
+              <tr key={idx}>
+                <td>{idx + 1}</td>
+                <td>{item.tourists_spot_name}</td>
+                <td>{item.country_name}</td>
+                <td>${item.average_cost}</td>
+                <td className="hidden sm:table-cell">{item.options}</td>
+                <td className="hidden sm:table-cell">
+                  {item.travel_time} Days
                 </td>
-                <td className="px-3 py-2 text-center">
-                  <span>{item.tourists_spot_name}</span>
-                </td>
-                <td className="px-3 py-2">
-                  <span>{item.country_name}</span>
-                </td>
-                <td className="px-3 py-2">
-                  <span>${item.average_cost}</span>
-                </td>
-                <td className="px-3 py-2">
-                  <span>{item.options}</span>
-                </td>
-                <td className="px-3 py-2 ">
-                  <span>{item.travel_time} Days</span>
-                </td>
-                <td className="px-3 py-2">
-                  <span>{item.total_visitors_per_year}/Year</span>
+                <td className="hidden sm:table-cell">
+                  {item.total_visitors_per_year}/Year
                 </td>
                 <td>
                   <Link to={`/update/${item._id}`}>
