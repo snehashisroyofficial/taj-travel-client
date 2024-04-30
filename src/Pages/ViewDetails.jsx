@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiFlag } from "react-icons/bi";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 const ViewDetails = () => {
   const user = useLoaderData();
 
@@ -19,12 +20,14 @@ const ViewDetails = () => {
     travel_time,
     _id,
   } = user;
-  console.log(email);
   return (
     <article
       className="w-full h-full   py-10 mx-auto space-y-16 bg-base-100 text-gray-900"
       data-aos="fade-up"
     >
+      <Helmet>
+        <title> {tourists_spot_name}</title>
+      </Helmet>
       <Fade>
         <div className="flex justify-center ">
           <img className="rounded-xl  " src={image_url} alt="" />

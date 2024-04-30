@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { RotatingLines } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 
@@ -95,6 +96,9 @@ const AllTouristsSpot = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All Tourists Spot</title>
+      </Helmet>
       <h1 className="text-4xl font-semibold text-center py-8">
         All Tourists Spot
       </h1>

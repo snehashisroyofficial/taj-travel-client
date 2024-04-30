@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 
 const AddCountries = () => {
@@ -30,7 +31,10 @@ const AddCountries = () => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form data-aos="zoom-out-up" onSubmit={handleOnSubmit}>
+      <Helmet>
+        <title>Add Countries</title>
+      </Helmet>
       <div className="min-h-screen flex justify-center items-center">
         <div className="max-w-xl w-full space-y-4 border-2 p-6">
           <h1 className="text-2xl font-bold text-center">Add Countries</h1>

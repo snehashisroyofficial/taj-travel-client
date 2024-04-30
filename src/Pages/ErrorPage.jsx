@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import errorImage from "../assets/Animation - 1712769249445 (1).json";
 import Lottie from "react-lottie";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const ErrorPage = () => {
   useEffect(() => {
@@ -16,6 +17,9 @@ const ErrorPage = () => {
 
   return (
     <section className="flex items-center min-h-dvh p-16 bg-gray-50 text-gray-800">
+      <Helmet>
+        <title>Page not found</title>
+      </Helmet>
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
         <div className="max-w-md text-center">
           <Lottie options={defaultOptions} />

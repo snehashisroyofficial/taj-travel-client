@@ -61,7 +61,7 @@ const Navbar = () => {
         }
         to="/"
       >
-        <li className="px-2 py-1">HOME</li>
+        <li className="px-2 py-1">Home</li>
       </NavLink>
       <NavLink
         className={({ isActive }) =>

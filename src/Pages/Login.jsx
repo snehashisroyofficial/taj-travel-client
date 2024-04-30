@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   useEffect(() => {
@@ -93,10 +94,13 @@ const Login = () => {
   };
 
   return (
-    <div className="flex w-full h-screen items-center justify-center  ">
-      {/* <Helmet>
-        <title>Login Page</title>
-      </Helmet> */}
+    <div
+      data-aos="zoom-in-up"
+      className="flex w-full h-screen items-center justify-center  "
+    >
+      <Helmet>
+        <title>Login Now</title>
+      </Helmet>
       <div
         className="max-w-md p-8 mx-auto border-2  h-fit space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800"
         data-aos="fade-up"

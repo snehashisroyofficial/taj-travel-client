@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -34,7 +35,10 @@ const ReviewAdd = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form data-aos="zoom-out-up" onSubmit={handleSubmit(onSubmit)}>
+      <Helmet>
+        <title>Add Reviews</title>
+      </Helmet>
       <div className="min-h-screen flex justify-center items-center">
         <div className="max-w-xl w-full space-y-4 border-2 p-6">
           <h1 className="text-2xl font-bold text-center">Client Review Add</h1>

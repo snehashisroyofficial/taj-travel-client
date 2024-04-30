@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 // import { Helmet } from "react-helmet-async";
 
 const Register = () => {
@@ -44,10 +45,13 @@ const Register = () => {
   };
 
   return (
-    <div className="flex w-full h-screen items-center justify-center  ">
-      {/* <Helmet>
-        <title>Register Page</title>
-      </Helmet> */}
+    <div
+      data-aos="flip-right"
+      className="flex w-full h-screen items-center justify-center   "
+    >
+      <Helmet>
+        <title>Register Now</title>
+      </Helmet>
       <div
         className="max-w-md h-fit p-8 mx-auto border-2   rounded-xl dark:bg-gray-50 dark:text-gray-800"
         data-aos="fade-up"

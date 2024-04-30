@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -48,6 +49,9 @@ const UpdateTouristsSpot = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>{country_name}</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="min-h-screen flex justify-center items-center">
           <div className="max-w-3xl w-full space-y-6  p-10">

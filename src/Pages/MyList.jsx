@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { MdDelete } from "react-icons/md";
 import { FaPencil } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
   const { user, loading } = useAuth();
@@ -76,7 +77,13 @@ const MyList = () => {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div
+      data-aos="zoom-in-up"
+      className="h-screen flex justify-center items-center"
+    >
+      <Helmet>
+        <title>My Lists</title>
+      </Helmet>
       <table className="table table-xs lg:table-lg table-zebra">
         {/* head */}
         <thead>

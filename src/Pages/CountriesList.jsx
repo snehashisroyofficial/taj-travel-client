@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const CountriesList = () => {
@@ -11,6 +12,9 @@ const CountriesList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>{countryName.countryname}</title>
+      </Helmet>
       <h1 className="text-4xl font-semibold text-center py-8">
         {countryName.countryname}
       </h1>
