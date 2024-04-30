@@ -20,8 +20,7 @@ const AddTouristsSpot = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         Swal.fire({
           icon: "success",
           title: "Tourists Spot Added!",

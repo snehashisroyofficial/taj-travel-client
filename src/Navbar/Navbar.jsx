@@ -20,6 +20,10 @@ const Navbar = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
+    document.addEventListener("mousedown", () => {
+      setOpen(false);
+    });
+
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
@@ -57,7 +61,7 @@ const Navbar = () => {
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 border-black" : "hover:bg-gray-100 "
+          isActive ? "border-b-2 border-gray-500 w-fit" : "hover:bg-gray-100 "
         }
         to="/"
       >
@@ -65,7 +69,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 border-black" : "hover:bg-gray-100 "
+          isActive ? "border-b-2 border-gray-500 w-fit" : "hover:bg-gray-100 "
         }
         to="/alltouristsspot"
       >
@@ -73,7 +77,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 border-black" : "hover:bg-gray-100 "
+          isActive ? "border-b-2 border-gray-500 w-fit" : "hover:bg-gray-100 "
         }
         to="/addcountries"
       >
@@ -84,7 +88,9 @@ const Navbar = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-2 border-black" : "hover:bg-gray-100 "
+              isActive
+                ? "border-b-2 border-gray-500 w-fit"
+                : "hover:bg-gray-100 "
             }
             to="/addtouristsspot"
           >
@@ -92,7 +98,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-2 border-black" : "hover:bg-gray-100 "
+              isActive
+                ? "lg:border-b-2 border-gray-500 w-fit"
+                : "hover:bg-gray-100 "
             }
             to="/mylist"
           >
