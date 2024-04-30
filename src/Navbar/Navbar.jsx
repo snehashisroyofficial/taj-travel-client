@@ -137,7 +137,7 @@ const Navbar = () => {
           <span className="text-violet-600 text-2xl md:text-4xl">
             <FaAvianex />
           </span>
-          <p className="rowdies-regular">Taj Travel</p>
+          <p>Taj Travel</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -1,10 +1,4 @@
-import {
-  FaAvianex,
-  FaFacebook,
-  FaHouseChimneyCrack,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa6";
+import { FaAvianex, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
@@ -22,7 +16,7 @@ const Footer = () => {
             <span className="text-violet-600 text-5xl md:text-4xl">
               <FaAvianex />
             </span>
-            <p className="rowdies-regular">Taj Travel</p>
+            <p>Taj Travel</p>
           </Link>
           <p className="text-sm px-6 lg:px-0">
             Taj Travel: Your one-stop shop for crafting unforgettable journeys,
