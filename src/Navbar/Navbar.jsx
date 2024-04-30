@@ -75,17 +75,19 @@ const Navbar = () => {
       >
         <li className="px-2 py-1">All Tourists Spot</li>
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "border-b-2 border-gray-500 w-fit" : "hover:bg-gray-100 "
-        }
-        to="/addcountries"
-      >
-        <li className="px-2 py-1">Add Countries</li>
-      </NavLink>
 
       {user && (
         <>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-gray-500 w-fit"
+                : "hover:bg-gray-100 "
+            }
+            to="/addcountries"
+          >
+            <li className="px-2 py-1">Add Countries</li>
+          </NavLink>
           <NavLink
             className={({ isActive }) =>
               isActive

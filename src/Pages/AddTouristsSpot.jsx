@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddTouristsSpot = () => {
+  const coutriesData = useLoaderData();
+
   const {
     register,
     handleSubmit,
@@ -30,7 +33,7 @@ const AddTouristsSpot = () => {
       });
     reset();
   };
-
+  console.log(coutriesData);
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -85,19 +88,28 @@ const AddTouristsSpot = () => {
 
             {/* cols 2 */}
             <div className="flex justify-between gap-3 ">
+              {/* countries data  */}
               <div className="w-1/2">
-                <label htmlFor="url" className="block mb-2 text-sm">
-                  Country Name
+                <label htmlFor="country" className="block mb-2 text-sm">
+                  Available Countries
                 </label>
-                <input
-                  type="text"
-                  name="country_name"
-                  id="country_name"
-                  placeholder="country name"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 text-sm"
-                  {...register("country_name", { required: true })}
-                />
-                {errors.image_url && (
+                <select
+                  className=" px-3 py-2 border rounded-md border-gray-300  text-gray-800 text-sm   bg-gray-50 w-full"
+                  name="country"
+                  id="country"
+                  {...register("country", { required: true })}
+                >
+                  <option value="" disabled selected>
+                    Please choose any one
+                  </option>
+
+                  {coutriesData.map((item) => (
+                    <option key={item._id} value="summer">
+                      {item.country_name}
+                    </option>
+                  ))}
+                </select>
+                {errors.country && (
                   <span className="text-red-500 text-sm">
                     This field is required
                   </span>
