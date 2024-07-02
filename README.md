@@ -4,6 +4,8 @@
 ## Taj Travel - Asia's No.1 Tours & Travel Company
 
 Website Name : Taj Travel
+
+Description: Taj Travel - A travel platform where users can post and manage travel packages, and view tour plans. Simplifying travel planning with user-friendly listing and management features.
  
 Live Website Link : https://assignment-10-e8407.web.app/
 ## npm packages that I used for this project
