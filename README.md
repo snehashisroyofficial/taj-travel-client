@@ -1,7 +1,7 @@
 
 
 
-## [Taj Travel - Asia's No.1 Tours & Travel Company]
+## Taj Travel - Asia's No.1 Tours & Travel Company
 
 Website Name : Taj Travel
  
